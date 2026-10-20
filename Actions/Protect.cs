@@ -1,15 +1,15 @@
-﻿using System;
+﻿using CuteMonsterQuest.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CuteMonsterQuest
+namespace CuteMonsterQuest.Actions
 {
-    public class Attack : IAction
+    public class Protect : IAction
     {
         public bool DoAction(Monster attacker, Monster target)
         {
-            int damage = attacker.MonsterAttack;
-            target.TakeDamage(damage);
+            target.ActivateProtection();
             return true;
         }
     }
