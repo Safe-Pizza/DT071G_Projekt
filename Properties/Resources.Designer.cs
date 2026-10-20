@@ -79,5 +79,15 @@ namespace CuteMonsterQuest.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beigeMonster {
+            get {
+                object obj = ResourceManager.GetObject("beigeMonster", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

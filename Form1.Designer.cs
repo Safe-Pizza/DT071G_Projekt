@@ -62,6 +62,7 @@
             button1.TabIndex = 1;
             button1.Text = "STARTA SPELET";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label2
             // 

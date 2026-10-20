@@ -35,9 +35,11 @@
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.backgroundGame1500;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1476, 936);
             Name = "GameWindow";
-            Text = "GameWindow";
+            Text = "GameWindow - Cute Monster Quest";
+            Load += GameWindow_Load;
             ResumeLayout(false);
         }
 

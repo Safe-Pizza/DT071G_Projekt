@@ -11,5 +11,11 @@ namespace CuteMonsterQuest
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MonsterSelectionForm monsterSelectionForm = new MonsterSelectionForm();
+            monsterSelectionForm.Show();
+        }
     }
 }

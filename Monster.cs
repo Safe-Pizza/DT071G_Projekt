@@ -4,16 +4,26 @@ using System.Text;
 
 namespace CuteMonsterQuest
 {
-    public class Monster(string name, Image image, int hp, int attack, int specialAttack)
+    public class Monster
     {
-        public required string MonsterName { get; set; } = name;
-        public required Image MonsterImage { get; set; } = image;
-        public int MonsterHp { get; private set; } = hp;
-        public int MonsterMaxHp { get; private set; } = hp;
-        public int MonsterAttack { get; private set; } = attack;
-        public int MonsterSpecialAttack { get; private set; } = specialAttack;
+        public string MonsterName { get; set; }
+        public Image MonsterImage { get; set; }
+        public int MonsterHp { get; private set; }
+        public int MonsterMaxHp { get; private set; }
+        public int MonsterAttack { get; private set; }
+        public int MonsterSpecialAttack { get; private set; }
         public bool UsedSpecialAttack { get; private set; }
         public bool HaveProtection { get; set; }
+
+        public Monster(string name, Image image, int hp, int attack, int specialAttack)
+        {
+            MonsterName = name;
+            MonsterImage = image;
+            MonsterHp = hp;
+            MonsterMaxHp = hp;
+            MonsterAttack = attack;
+            MonsterSpecialAttack = specialAttack;
+        }
 
         public void TakeDamage(int damage)
         {

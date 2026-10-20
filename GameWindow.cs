@@ -14,5 +14,10 @@ namespace CuteMonsterQuest
         {
             InitializeComponent();
         }
+
+        private void GameWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
