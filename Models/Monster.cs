@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CuteMonsterQuest
+namespace CuteMonsterQuest.Models
 {
     public class Monster
     {
