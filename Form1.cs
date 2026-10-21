@@ -7,6 +7,7 @@ namespace CuteMonsterQuest
         public Form1()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -22,9 +23,7 @@ namespace CuteMonsterQuest
 
             MonsterSelectionForm monsterSelectionForm = new MonsterSelectionForm(game);
 
-            monsterSelectionForm.StartPosition = FormStartPosition.Manual;
-
-            monsterSelectionForm.Location = this.Location;
+            monsterSelectionForm.StartPosition = FormStartPosition.CenterScreen;
 
             monsterSelectionForm.ShowDialog();
 

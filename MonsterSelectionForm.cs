@@ -25,6 +25,11 @@ namespace CuteMonsterQuest
 
         private void ShowMonsters(List<Monster> monsterList)
         {
+            if(monsterList == null)
+            {
+                throw new ArgumentException("Listan får inte vara tom");
+            }
+
             pictureBox1.Image = monsterList[0].MonsterImage;
             pictureBox1.Tag = monsterList[0];
             pictureBox1.Click += ChooseMonster_Click;
@@ -38,7 +43,7 @@ namespace CuteMonsterQuest
             pictureBox3.Click += ChooseMonster_Click;
         }
 
-        private void ChooseMonster_Click(object sender, EventArgs e)
+        private void ChooseMonster_Click(object? sender, EventArgs e)
         {
             if (sender is PictureBox pictureBox &&
                 pictureBox.Tag is Monster monster)

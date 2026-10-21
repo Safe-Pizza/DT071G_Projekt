@@ -1,4 +1,5 @@
-﻿using CuteMonsterQuest.GameLogic;
+﻿using CuteMonsterQuest.Actions;
+using CuteMonsterQuest.GameLogic;
 using CuteMonsterQuest.Models;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,16 @@ namespace CuteMonsterQuest
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAttack_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelOpponentMonsterHp_Click(object sender, EventArgs e)
         {
 
         }
