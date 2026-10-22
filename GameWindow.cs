@@ -51,7 +51,7 @@ namespace CuteMonsterQuest
 
         }
 
-        private void buttonAttack_Click(object sender, EventArgs e)
+        private async void buttonAttack_Click(object sender, EventArgs e)
         {
             if (game.CurrentBattle is null)
                 return;
@@ -69,7 +69,7 @@ namespace CuteMonsterQuest
             }
             else
             {
-                ShowBattleInfo($"{player.MonsterName} attackerade och skadade {opponent.MonsterName} med {player.MonsterAttack}!");
+                await ShowBattleInfo($"{player.MonsterName} attackerade och skadade {opponent.MonsterName} med {player.MonsterAttack}!");
                 labelOpponentMonsterHp.Text = $"HP: {opponent.MonsterHp}";
             }
 

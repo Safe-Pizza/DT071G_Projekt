@@ -10,7 +10,7 @@ namespace CuteMonsterQuest.Actions
     {
         public bool DoAction(Monster attacker, Monster target)
         {
-            attacker.restoreHp(20);
+            attacker.RestoreHp(20);
             return true;
         }
     }

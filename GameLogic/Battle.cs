@@ -12,6 +12,8 @@ namespace CuteMonsterQuest.GameLogic
         public Monster Player { get; }
         public Monster Opponent { get; }
 
+        public bool PlayerTurn { get; private set; }
+
         private List<IAction> opponentActions = new()
         {
             new Attack(),
@@ -24,6 +26,35 @@ namespace CuteMonsterQuest.GameLogic
         {
             Player = player;
             Opponent = opponent;
+            PlayerTurn = true;
+        }
+
+        public bool ActionTurn(IAction action)
+        {
+            if(isBattleWon())
+            {
+                return false;
+            }
+
+            //Kontroll vems tur
+            Monster attacker = PlayerTurn ? Player : Opponent;
+            Monster target = PlayerTurn ? Opponent : Player;
+
+            bool success = action.DoAction(attacker, target);
+
+            if (success)
+            {
+                ChangeTurn();
+            }
+
+            return success;
+
+
+        }
+
+        public void ChangeTurn()
+        {
+            PlayerTurn = !PlayerTurn;
         }
 
         public bool isBattleWon()

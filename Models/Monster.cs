@@ -40,7 +40,7 @@ namespace CuteMonsterQuest.Models
             }
         }
 
-        public void restoreHp(int amount)
+        public void RestoreHp(int amount)
         {
             MonsterHp += amount;
             if (MonsterHp > MonsterMaxHp)
