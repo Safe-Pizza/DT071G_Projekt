@@ -166,6 +166,7 @@
             buttonBerry.Text = "ÄT BÄR";
             buttonBerry.TextAlign = ContentAlignment.MiddleRight;
             buttonBerry.UseVisualStyleBackColor = false;
+            buttonBerry.Click += buttonBerry_Click;
             // 
             // battleInfoTimer
             // 

@@ -90,6 +90,24 @@ namespace CuteMonsterQuest
 
         }
 
+        private async void buttonBerry_Click(object sender, EventArgs e)
+        {
+            if (game.CurrentBattle is null)
+                return;
+
+            bool success = game.CurrentBattle.ActionTurn(new Berry());
+
+            if (!success)
+            {
+                MessageBox.Show("Något blev fel, försök igen");
+                return;
+            }
+            else
+            {
+                await ShowBattleInfo($"MUMS! + 20 hp");
+            }
+        }
+
         private async Task ShowBattleInfo(string info, Color? backgroundColor = null)
         {
             labelBattleInfo.Text = info;
