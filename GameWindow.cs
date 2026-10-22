@@ -63,8 +63,15 @@ namespace CuteMonsterQuest
 
             if (!success)
             {
-                MessageBox.Show("Player turn attack went wrong");
-                return;
+                if (game.CurrentBattle.IsBattleWon())
+                {
+                    await EndBattle();
+                }
+                else
+                {
+                    MessageBox.Show("Player turn attack went wrong");
+                    return;
+                }
             }
             else
             {
@@ -88,12 +95,19 @@ namespace CuteMonsterQuest
 
             if (!success)
             {
-                MessageBox.Show("Player turn berry went wrong");
-                return;
+                if (game.CurrentBattle.IsBattleWon())
+                {
+                    await EndBattle();
+                }
+                else
+                {
+                    MessageBox.Show("Player turn protect went wrong");
+                    return;
+                }
             }
             else
             {
-                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} aktiverar skydd {game.CurrentBattle.Player.HaveProtection}");
+                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} aktiverar skydd");
                 UpdateMonsterLabelHp();
             }
 
@@ -112,12 +126,20 @@ namespace CuteMonsterQuest
 
             if (!success)
             {
-                MessageBox.Show("Något blev fel, försök igen");
-                return;
+                if (game.CurrentBattle.IsBattleWon())
+                {
+                    await EndBattle();
+                }
+                else
+                {
+                    MessageBox.Show("Player turn berry went wrong");
+                    return;
+                }
             }
             else
             {
                 await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} äter bär");
+                UpdateMonsterLabelHp();
             }
 
             await AutomaticExecuteOpponentTurn();
@@ -134,8 +156,15 @@ namespace CuteMonsterQuest
 
             if (opponentAction == null)
             {
-                MessageBox.Show("Opponent turn in attack went wrong");
-                return;
+                if (game.CurrentBattle.IsBattleWon())
+                {
+                    await EndBattle();
+                }
+                else
+                {
+                    MessageBox.Show("Opponent turn went wrong");
+                    return;
+                }
             }
             else
             {
@@ -172,6 +201,25 @@ namespace CuteMonsterQuest
 
             labelPlayerMonsterHp.Text = $"HP: {game.CurrentBattle.Player.MonsterHp}";
             labelOpponentMonsterHp.Text = $"HP: {game.CurrentBattle.Opponent.MonsterHp}";
+        }
+
+        private async Task EndBattle()
+        {
+            Battle? battle = game.CurrentBattle;
+
+            if (battle == null || !battle.IsBattleWon())
+                return;
+
+            if (battle.Player.IsAlive())
+            {
+                MessageBox.Show("Grattis! Du vann striden!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Du förlorade striden!");
+                this.Close();
+            }
         }
     }
 }

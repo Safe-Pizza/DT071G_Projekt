@@ -24,7 +24,7 @@ namespace CuteMonsterQuest.GameLogic
         private void CreateMonsters()
         {
             StartingMonsters.Add(new Monster(
-                "Beige", Properties.Resources.beigeMonster, 120, 20, 40));
+                "Beige", Properties.Resources.beigeMonster, 120, 120, 40));
 
             StartingMonsters.Add(new Monster(
                 "Green", Properties.Resources.greenMonster, 120, 20, 40));
