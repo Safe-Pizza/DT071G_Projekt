@@ -69,8 +69,7 @@ namespace CuteMonsterQuest
             else
             {
                 await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} attackerar");
-                labelOpponentMonsterHp.Text = $"HP: {game.CurrentBattle.Opponent.MonsterHp}";
-                labelPlayerMonsterHp.Text = $"HP: {game.CurrentBattle.Player.MonsterHp}";
+                UpdateMonsterLabelHp();
             }
 
             IAction? opponentAction = game.CurrentBattle.OpponentActionAutomatic();
@@ -82,9 +81,9 @@ namespace CuteMonsterQuest
             }
             else
             {
-                await ShowBattleInfo($"{game.CurrentBattle.Opponent.MonsterName} {opponentAction.Name}");
-                labelPlayerMonsterHp.Text = $"HP: {game.CurrentBattle.Player.MonsterHp}";
-                labelOpponentMonsterHp.Text = $"HP: {game.CurrentBattle.Opponent.MonsterHp}";
+                await ShowBattleInfo($"{game.CurrentBattle.Opponent.MonsterName} {opponentAction.Name}", Color.Black);
+                UpdateMonsterLabelHp();
+
             }
 
             EnablePlayerButtons(true);
@@ -145,6 +144,15 @@ namespace CuteMonsterQuest
             buttonProtect.Enabled = enabled;
             buttonBerry.Enabled = enabled;
 
+        }
+
+        private void UpdateMonsterLabelHp()
+        {
+            if (game.CurrentBattle is null)
+                return;
+
+            labelPlayerMonsterHp.Text = $"HP: {game.CurrentBattle.Player.MonsterHp}";
+            labelOpponentMonsterHp.Text = $"HP: {game.CurrentBattle.Opponent.MonsterHp}";
         }
     }
 }
