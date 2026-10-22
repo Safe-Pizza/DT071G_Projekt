@@ -42,7 +42,7 @@ namespace CuteMonsterQuest.GameLogic
 
             bool success = action.DoAction(attacker, target);
 
-            if (success)
+            if (success && !isBattleWon())
             {
                 ChangeTurn();
             }
