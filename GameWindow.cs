@@ -58,7 +58,7 @@ namespace CuteMonsterQuest
 
             bool success = game.CurrentBattle.ActionTurn(new Attack());
 
-              if (!success)
+            if (!success)
             {
                 MessageBox.Show("Något blev fel, försök igen");
                 return;
@@ -70,6 +70,26 @@ namespace CuteMonsterQuest
             }
 
         }
+
+        private async void buttonProtect_Click(object sender, EventArgs e)
+        {
+            if (game.CurrentBattle is null)
+                return;
+
+            bool success = game.CurrentBattle.ActionTurn(new Protect());
+
+            if (!success)
+            {
+                MessageBox.Show("Något blev fel, försök igen");
+                return;
+            }
+            else
+            {
+                await ShowBattleInfo($"SKYDD AKTIVT {game.CurrentBattle.Player.HaveProtection}");
+            }
+
+        }
+
         private async Task ShowBattleInfo(string info, Color? backgroundColor = null)
         {
             labelBattleInfo.Text = info;

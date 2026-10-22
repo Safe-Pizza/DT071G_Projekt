@@ -149,6 +149,7 @@
             buttonProtect.Text = "SKYDD";
             buttonProtect.TextAlign = ContentAlignment.MiddleRight;
             buttonProtect.UseVisualStyleBackColor = false;
+            buttonProtect.Click += buttonProtect_Click;
             // 
             // buttonBerry
             // 
