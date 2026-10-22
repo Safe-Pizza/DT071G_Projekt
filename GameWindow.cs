@@ -54,6 +54,8 @@ namespace CuteMonsterQuest
 
         private async void buttonAttack_Click(object sender, EventArgs e)
         {
+            EnablePlayerButtons(false);
+
             if (game.CurrentBattle is null)
                 return;
 
@@ -84,6 +86,8 @@ namespace CuteMonsterQuest
                 labelPlayerMonsterHp.Text = $"HP: {game.CurrentBattle.Player.MonsterHp}";
                 labelOpponentMonsterHp.Text = $"HP: {game.CurrentBattle.Opponent.MonsterHp}";
             }
+
+            EnablePlayerButtons(true);
 
 
         }
@@ -134,6 +138,15 @@ namespace CuteMonsterQuest
             await Task.Delay(2000);
 
             labelBattleInfo.Visible = false;
+        }
+
+        private void EnablePlayerButtons(bool enabled)
+        {
+            buttonAttack.Enabled = enabled;
+            buttonAttackSpecial.Enabled = enabled;
+            buttonProtect.Enabled = enabled;
+            buttonBerry.Enabled = enabled;
+
         }
     }
 }
