@@ -30,7 +30,7 @@ namespace CuteMonsterQuest.GameLogic
 
         public bool ActionTurn(IAction action)
         {
-            if(IsBattleWon())
+            if (IsBattleWon())
             {
                 return false;
             }
@@ -50,18 +50,18 @@ namespace CuteMonsterQuest.GameLogic
         }
 
         public IAction? OpponentActionAutomatic()
+
         {
-            if (IsBattleWon())
+            if (IsBattleWon() || PlayerTurn)
             {
                 return null;
             }
 
             IAction action = RandomAction(opponentActions);
 
-            bool success =  ActionTurn(action);
+            bool success = ActionTurn(action);
 
             return success ? action : null;
-
         }
 
         private IAction RandomAction(List<IAction> opponentActions)
