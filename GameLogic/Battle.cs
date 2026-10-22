@@ -49,6 +49,21 @@ namespace CuteMonsterQuest.GameLogic
             return success;
         }
 
+        public IAction? OpponentActionAutomatic()
+        {
+            if (isBattleWon())
+            {
+                return null;
+            }
+
+            IAction action = RandomAction(opponentActions);
+
+            bool success =  ActionTurn(action);
+
+            return success ? action : null;
+
+        }
+
         private IAction RandomAction(List<IAction> opponentActions)
         {
             if (opponentActions.Count == 0)

@@ -1,5 +1,6 @@
 ﻿using CuteMonsterQuest.Actions;
 using CuteMonsterQuest.GameLogic;
+using CuteMonsterQuest.Interfaces;
 using CuteMonsterQuest.Models;
 using System;
 using System.Collections.Generic;
@@ -60,14 +61,30 @@ namespace CuteMonsterQuest
 
             if (!success)
             {
-                MessageBox.Show("Något blev fel, försök igen");
+                MessageBox.Show("Player turn attack went wrong");
                 return;
             }
             else
             {
                 await ShowBattleInfo($"ATTACK!");
                 labelOpponentMonsterHp.Text = $"HP: {game.CurrentBattle.Opponent.MonsterHp}";
+                labelPlayerMonsterHp.Text = $"HP: {game.CurrentBattle.Player.MonsterHp}";
             }
+
+            IAction opponentAction = game.CurrentBattle.OpponentActionAutomatic();
+
+            if (opponentAction == null)
+            {
+                MessageBox.Show("Opponent turn in attack went wrong");
+                return;
+            }
+            else
+            {
+                await ShowBattleInfo($"{opponentAction.GetType().Name}");
+                labelPlayerMonsterHp.Text = $"HP: {game.CurrentBattle.Player.MonsterHp}";
+                labelOpponentMonsterHp.Text = $"HP: {game.CurrentBattle.Opponent.MonsterHp}";
+            }
+
 
         }
 
@@ -80,7 +97,7 @@ namespace CuteMonsterQuest
 
             if (!success)
             {
-                MessageBox.Show("Något blev fel, försök igen");
+                MessageBox.Show("Player turn berry went wrong");
                 return;
             }
             else
