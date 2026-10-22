@@ -17,7 +17,6 @@ namespace CuteMonsterQuest.GameLogic
         private List<IAction> opponentActions = new()
         {
             new Attack(),
-            new Specialattack(),
             new Protect(),
             new Berry()
         };
@@ -48,8 +47,16 @@ namespace CuteMonsterQuest.GameLogic
             }
 
             return success;
+        }
 
+        private IAction RandomAction(List<IAction> opponentActions)
+        {
+            if (opponentActions.Count == 0)
+                throw new InvalidOperationException("Inga actions finns.");
 
+            int index = Random.Shared.Next(opponentActions.Count);
+
+            return opponentActions[index];
         }
 
         public void ChangeTurn()
