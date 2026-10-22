@@ -10,7 +10,7 @@ namespace CuteMonsterQuest.Actions
     {
         public bool DoAction(Monster attacker, Monster target)
         {
-            target.ActivateProtection();
+            attacker.ActivateProtection();
             return true;
         }
     }

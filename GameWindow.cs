@@ -53,12 +53,36 @@ namespace CuteMonsterQuest
 
         private void buttonAttack_Click(object sender, EventArgs e)
         {
+            if (game.CurrentBattle is null)
+                return;
+
+            Monster player = game.CurrentBattle.Player;
+            Monster opponent = game.CurrentBattle.Opponent;
+
+            var attack = new Attack();
+            bool success = attack.DoAction(player, opponent);
+
+            if(!success)
+            {
+                MessageBox.Show("Något blev fel, försök igen");
+                return;
+            }
+            else
+            {
+                ShowBattleInfo($"{player.MonsterName} attackerade och skadade {opponent.MonsterName} med {player.MonsterAttack}!");
+                labelOpponentMonsterHp.Text = $"HP: {opponent.MonsterHp}";
+            }
 
         }
-
-        private void labelOpponentMonsterHp_Click(object sender, EventArgs e)
+        private async Task ShowBattleInfo(string info, Color? backgroundColor = null)
         {
+            labelBattleInfo.Text = info;
+            labelBattleInfo.BackColor = backgroundColor ?? Color.DarkSlateGray;
+            labelBattleInfo.Visible = true;
 
+            await Task.Delay(2000);
+
+            labelBattleInfo.Visible = false;
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             labelPlayerMonster = new Label();
@@ -38,6 +39,8 @@
             buttonAttackSpecial = new Button();
             buttonProtect = new Button();
             buttonBerry = new Button();
+            battleInfoTimer = new System.Windows.Forms.Timer(components);
+            labelBattleInfo = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -97,7 +100,6 @@
             labelOpponentMonsterHp.Name = "labelOpponentMonsterHp";
             labelOpponentMonsterHp.Size = new Size(207, 55);
             labelOpponentMonsterHp.TabIndex = 5;
-            labelOpponentMonsterHp.Click += labelOpponentMonsterHp_Click;
             // 
             // buttonAttack
             // 
@@ -164,6 +166,21 @@
             buttonBerry.TextAlign = ContentAlignment.MiddleRight;
             buttonBerry.UseVisualStyleBackColor = false;
             // 
+            // battleInfoTimer
+            // 
+            battleInfoTimer.Interval = 2000;
+            // 
+            // labelBattleInfo
+            // 
+            labelBattleInfo.BackColor = Color.Transparent;
+            labelBattleInfo.Font = new Font("Arial Rounded MT Bold", 14.1428576F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelBattleInfo.ForeColor = Color.White;
+            labelBattleInfo.Location = new Point(373, 135);
+            labelBattleInfo.Name = "labelBattleInfo";
+            labelBattleInfo.Size = new Size(791, 114);
+            labelBattleInfo.TabIndex = 10;
+            labelBattleInfo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // GameWindow
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
@@ -172,6 +189,7 @@
             BackgroundImage = Properties.Resources.backgroundGame1500;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1476, 1206);
+            Controls.Add(labelBattleInfo);
             Controls.Add(buttonBerry);
             Controls.Add(buttonProtect);
             Controls.Add(buttonAttackSpecial);
@@ -202,5 +220,7 @@
         private Button buttonAttackSpecial;
         private Button buttonProtect;
         private Button buttonBerry;
+        private System.Windows.Forms.Timer battleInfoTimer;
+        private Label labelBattleInfo;
     }
 }
