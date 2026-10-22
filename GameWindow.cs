@@ -72,19 +72,7 @@ namespace CuteMonsterQuest
                 UpdateMonsterLabelHp();
             }
 
-            IAction? opponentAction = game.CurrentBattle.OpponentActionAutomatic();
-
-            if (opponentAction == null)
-            {
-                MessageBox.Show("Opponent turn in attack went wrong");
-                return;
-            }
-            else
-            {
-                await ShowBattleInfo($"{game.CurrentBattle.Opponent.MonsterName} {opponentAction.Name}", Color.Black);
-                UpdateMonsterLabelHp();
-
-            }
+            await AutomaticExecuteOpponentTurn();
 
             EnablePlayerButtons(true);
         }
@@ -93,6 +81,8 @@ namespace CuteMonsterQuest
         {
             if (game.CurrentBattle is null)
                 return;
+
+            EnablePlayerButtons(false);
 
             bool success = game.CurrentBattle.ActionTurn(new Protect());
 
@@ -103,8 +93,13 @@ namespace CuteMonsterQuest
             }
             else
             {
-                await ShowBattleInfo($"SKYDD AKTIVT {game.CurrentBattle.Player.HaveProtection}");
+                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} aktiverar skydd {game.CurrentBattle.Player.HaveProtection}");
+                UpdateMonsterLabelHp();
             }
+
+            await AutomaticExecuteOpponentTurn();
+
+            EnablePlayerButtons(true);
 
         }
 
@@ -122,7 +117,31 @@ namespace CuteMonsterQuest
             }
             else
             {
-                await ShowBattleInfo($"MUMS! + 20 hp");
+                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} äter bär");
+            }
+
+            await AutomaticExecuteOpponentTurn();
+
+            EnablePlayerButtons(true);
+        }
+
+        private async Task AutomaticExecuteOpponentTurn()
+        {
+            if (game.CurrentBattle is null)
+                return;
+
+            IAction? opponentAction = game.CurrentBattle.OpponentActionAutomatic();
+
+            if (opponentAction == null)
+            {
+                MessageBox.Show("Opponent turn in attack went wrong");
+                return;
+            }
+            else
+            {
+                await ShowBattleInfo($"{game.CurrentBattle.Opponent.MonsterName} {opponentAction.Name}", Color.Black);
+                UpdateMonsterLabelHp();
+
             }
         }
 
