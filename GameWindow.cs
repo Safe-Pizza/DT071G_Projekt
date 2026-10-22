@@ -54,10 +54,10 @@ namespace CuteMonsterQuest
 
         private async void buttonAttack_Click(object sender, EventArgs e)
         {
-            EnablePlayerButtons(false);
-
             if (game.CurrentBattle is null)
                 return;
+
+            EnablePlayerButtons(false);
 
             bool success = game.CurrentBattle.ActionTurn(new Attack());
 
