@@ -8,7 +8,7 @@ namespace CuteMonsterQuest.Actions
 {
     public class Specialattack : IAction
     {
-
+        public string Name => "använder specialattack";
         private readonly HashSet<Monster> MonsterUsedSpecialAttack = [];
         public bool DoAction(Monster attacker, Monster target)
         {

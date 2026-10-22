@@ -7,6 +7,7 @@ namespace CuteMonsterQuest.Interfaces
 {
     public interface IAction
     {
+        string Name { get; }
         bool DoAction(Monster attacker, Monster target);
     }
 }

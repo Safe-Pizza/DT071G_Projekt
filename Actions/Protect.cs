@@ -8,6 +8,7 @@ namespace CuteMonsterQuest.Actions
 {
     public class Protect : IAction
     {
+        public string Name => "aktiverar skydd";
         public bool DoAction(Monster attacker, Monster target)
         {
             attacker.ActivateProtection();

@@ -68,12 +68,12 @@ namespace CuteMonsterQuest
             }
             else
             {
-                await ShowBattleInfo($"ATTACK!");
+                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} attackerar");
                 labelOpponentMonsterHp.Text = $"HP: {game.CurrentBattle.Opponent.MonsterHp}";
                 labelPlayerMonsterHp.Text = $"HP: {game.CurrentBattle.Player.MonsterHp}";
             }
 
-            IAction opponentAction = game.CurrentBattle.OpponentActionAutomatic();
+            IAction? opponentAction = game.CurrentBattle.OpponentActionAutomatic();
 
             if (opponentAction == null)
             {
@@ -82,14 +82,12 @@ namespace CuteMonsterQuest
             }
             else
             {
-                await ShowBattleInfo($"{opponentAction.GetType().Name}");
+                await ShowBattleInfo($"{game.CurrentBattle.Opponent.MonsterName} {opponentAction.Name}");
                 labelPlayerMonsterHp.Text = $"HP: {game.CurrentBattle.Player.MonsterHp}";
                 labelOpponentMonsterHp.Text = $"HP: {game.CurrentBattle.Opponent.MonsterHp}";
             }
 
             EnablePlayerButtons(true);
-
-
         }
 
         private async void buttonProtect_Click(object sender, EventArgs e)

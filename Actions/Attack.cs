@@ -8,6 +8,7 @@ namespace CuteMonsterQuest.Actions
 {
     public class Attack : IAction
     {
+        public string Name => "attackerade";
         public bool DoAction(Monster attacker, Monster target)
         {
             int damage = attacker.MonsterAttack;

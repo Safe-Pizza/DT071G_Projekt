@@ -8,6 +8,7 @@ namespace CuteMonsterQuest.Actions
 {
     public class Berry : IAction
     {
+        public string Name => "äter bär";
         public bool DoAction(Monster attacker, Monster target)
         {
             attacker.RestoreHp(20);
