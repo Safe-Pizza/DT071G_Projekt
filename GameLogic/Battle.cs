@@ -59,7 +59,7 @@ namespace CuteMonsterQuest.GameLogic
 
         public bool isBattleWon()
         {
-            return Player.MonsterHp <= 0 || Opponent.MonsterHp <= 0;
+            return !Player.IsAlive() || !Opponent.IsAlive();
         }
     }
 }
