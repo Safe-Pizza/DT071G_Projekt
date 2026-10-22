@@ -56,21 +56,17 @@ namespace CuteMonsterQuest
             if (game.CurrentBattle is null)
                 return;
 
-            Monster player = game.CurrentBattle.Player;
-            Monster opponent = game.CurrentBattle.Opponent;
+            bool success = game.CurrentBattle.ActionTurn(new Attack());
 
-            var attack = new Attack();
-            bool success = attack.DoAction(player, opponent);
-
-            if(!success)
+              if (!success)
             {
                 MessageBox.Show("Något blev fel, försök igen");
                 return;
             }
             else
             {
-                await ShowBattleInfo($"{player.MonsterName} attackerade och skadade {opponent.MonsterName} med {player.MonsterAttack}!");
-                labelOpponentMonsterHp.Text = $"HP: {opponent.MonsterHp}";
+                await ShowBattleInfo($"ATTACK!");
+                labelOpponentMonsterHp.Text = $"HP: {game.CurrentBattle.Opponent.MonsterHp}";
             }
 
         }
