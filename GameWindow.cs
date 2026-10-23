@@ -84,6 +84,43 @@ namespace CuteMonsterQuest
             EnablePlayerButtons(true);
         }
 
+        private async void buttonAttackSpecial_Click(object sender, EventArgs e)
+        {
+            if (game.CurrentBattle is null)
+                return;
+
+            EnablePlayerButtons(false);
+
+            bool success = game.CurrentBattle.ActionTurn(new Specialattack());
+
+            if (!success)
+            {
+                if (!game.CurrentBattle.IsBattleWon())
+                {
+                    await ShowBattleInfo("Specialattack redan använd! Välj på nytt");
+                }
+                else if (game.CurrentBattle.IsBattleWon())
+                {
+                    await EndBattle();
+                }
+                else
+                {
+                    MessageBox.Show("Player turn specialattack went wrong");
+                    return;
+                }
+            }
+            else
+            {
+                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} använder specialattack");
+                UpdateMonsterLabelHp();
+
+
+                await AutomaticExecuteOpponentTurn();
+
+                EnablePlayerButtons(true);
+            }
+        }
+
         private async void buttonProtect_Click(object sender, EventArgs e)
         {
             if (game.CurrentBattle is null)
@@ -160,6 +197,10 @@ namespace CuteMonsterQuest
                 {
                     await EndBattle();
                 }
+                else if (game.CurrentBattle.Opponent.UsedSpecialAttack)
+                {
+                    await AutomaticExecuteOpponentTurn();
+                }
                 else
                 {
                     MessageBox.Show("Opponent turn went wrong");
@@ -187,8 +228,11 @@ namespace CuteMonsterQuest
 
         private void EnablePlayerButtons(bool enabled)
         {
+            if (game.CurrentBattle is null)
+                return;
+
             buttonAttack.Enabled = enabled;
-            buttonAttackSpecial.Enabled = enabled;
+            buttonAttackSpecial.Enabled = enabled && !game.CurrentBattle.Player.UsedSpecialAttack;
             buttonProtect.Enabled = enabled;
             buttonBerry.Enabled = enabled;
 

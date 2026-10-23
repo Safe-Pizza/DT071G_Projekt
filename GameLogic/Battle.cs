@@ -17,6 +17,7 @@ namespace CuteMonsterQuest.GameLogic
         private List<IAction> opponentActions = new()
         {
             new Attack(),
+            new Specialattack(),
             new Protect(),
             new Berry()
         };

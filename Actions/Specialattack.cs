@@ -9,17 +9,17 @@ namespace CuteMonsterQuest.Actions
     public class Specialattack : IAction
     {
         public string Name => "använder specialattack";
-        private readonly HashSet<Monster> MonsterUsedSpecialAttack = [];
+
         public bool DoAction(Monster attacker, Monster target)
         {
-            if(MonsterUsedSpecialAttack.Contains(attacker))
+            if(attacker.UsedSpecialAttack)
             {
                 return false;
             }
             else
             {
                 target.TakeDamage(attacker.MonsterSpecialAttack);
-                MonsterUsedSpecialAttack.Add(attacker);
+                attacker.UsedSpecialAttack = true;
                 return true;
             }
         }

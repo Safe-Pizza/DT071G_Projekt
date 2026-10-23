@@ -133,6 +133,7 @@
             buttonAttackSpecial.Text = "SPECIAL\r\nATTACK";
             buttonAttackSpecial.TextAlign = ContentAlignment.MiddleRight;
             buttonAttackSpecial.UseVisualStyleBackColor = false;
+            buttonAttackSpecial.Click += buttonAttackSpecial_Click;
             // 
             // buttonProtect
             // 

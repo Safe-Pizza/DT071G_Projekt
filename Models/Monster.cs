@@ -12,7 +12,7 @@ namespace CuteMonsterQuest.Models
         public int MonsterMaxHp { get; private set; }
         public int MonsterAttack { get; private set; }
         public int MonsterSpecialAttack { get; private set; }
-        public bool UsedSpecialAttack { get; private set; }
+        public bool UsedSpecialAttack { get; set; } = false;
         public bool HaveProtection { get; set; }
 
         public Monster(string name, Image image, int hp, int attack, int specialAttack)
