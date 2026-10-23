@@ -24,22 +24,22 @@ namespace CuteMonsterQuest.GameLogic
         private void CreateMonsters()
         {
             StartingMonsters.Add(new Monster(
-                "Beige", Properties.Resources.beigeMonster, 120, 120, 40));
+                "Beige", Properties.Resources.beigeMonster, 120, 15));
 
             StartingMonsters.Add(new Monster(
-                "Green", Properties.Resources.greenMonster, 120, 20, 40));
+                "Green", Properties.Resources.greenMonster, 100, 20));
 
             StartingMonsters.Add(new Monster(
-                "Blue", Properties.Resources.blueMonster, 120, 20, 40));
+                "Blue", Properties.Resources.blueMonster, 80, 25));
 
             OpponentMonsters.Add(new Monster(
-                "Navy", Properties.Resources.navyAngryMonster, 120, 20, 40));
+                "Navy", Properties.Resources.navyAngryMonster, 90, 22));
 
             OpponentMonsters.Add(new Monster(
-                "Red", Properties.Resources.redAngryMonster, 120, 20, 40));
+                "Red", Properties.Resources.redAngryMonster, 100, 20));
 
             OpponentMonsters.Add(new Monster(
-                "Purple", Properties.Resources.purpleAngryMonster, 120, 20, 40));
+                "Purple", Properties.Resources.purpleAngryMonster, 110, 17));
         }
 
         public void SelectMonster(Monster monster)

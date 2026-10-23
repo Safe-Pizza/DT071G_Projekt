@@ -15,14 +15,14 @@ namespace CuteMonsterQuest.Models
         public bool UsedSpecialAttack { get; set; } = false;
         public bool HaveProtection { get; set; }
 
-        public Monster(string name, Image image, int hp, int attack, int specialAttack)
+        public Monster(string name, Image image, int hp, int attack)
         {
             MonsterName = name;
             MonsterImage = image;
             MonsterHp = hp;
             MonsterMaxHp = hp;
             MonsterAttack = attack;
-            MonsterSpecialAttack = specialAttack;
+            MonsterSpecialAttack = attack * 2;
         }
 
         public void TakeDamage(int damage)
