@@ -1,4 +1,15 @@
-﻿using CuteMonsterQuest.Interfaces;
+﻿/**
+ * Filnamn: Specialattack.cs
+ * Författare: Hanna Lindkvist
+ * Datum: 2026-10-23
+ * Kurs: DT071G
+ * 
+ * Beskrivning: Klass för special attack med metod som minskar målets HP utifrån attackerande monsters specialattack. 
+ * Endast en gång per spel, metod kontrollerar detta.  Implementerar interface IAction
+ * 
+ * **/
+
+using CuteMonsterQuest.Interfaces;
 using CuteMonsterQuest.Models;
 using System;
 using System.Collections.Generic;

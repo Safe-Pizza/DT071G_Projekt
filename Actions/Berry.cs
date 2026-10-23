@@ -1,4 +1,15 @@
-﻿using CuteMonsterQuest.Interfaces;
+﻿/**
+ * Filnamn: Berry.cs
+ * Författare: Hanna Lindkvist
+ * Datum: 2026-10-23
+ * Kurs: DT071G
+ * 
+ * Beskrivning: Klass för läkning, äta bär. Vid val av metoden ökar HP för den som valt. 
+ * Implementerar interface IAction
+ * 
+ * **/
+
+using CuteMonsterQuest.Interfaces;
 using CuteMonsterQuest.Models;
 using System;
 using System.Collections.Generic;
