@@ -105,9 +105,9 @@
             // 
             buttonAttack.BackColor = Color.DarkSlateGray;
             buttonAttack.Cursor = Cursors.Hand;
-            buttonAttack.Font = new Font("Arial Rounded MT Bold", 14.1428576F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonAttack.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             buttonAttack.ForeColor = Color.White;
-            buttonAttack.Image = Properties.Resources.swords;
+            buttonAttack.Image = Properties.Resources.swordsVit40;
             buttonAttack.ImageAlign = ContentAlignment.MiddleLeft;
             buttonAttack.Location = new Point(284, 1052);
             buttonAttack.Name = "buttonAttack";
@@ -125,7 +125,7 @@
             buttonAttackSpecial.Cursor = Cursors.Hand;
             buttonAttackSpecial.Font = new Font("Arial Rounded MT Bold", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
             buttonAttackSpecial.ForeColor = Color.White;
-            buttonAttackSpecial.Image = Properties.Resources.swords;
+            buttonAttackSpecial.Image = Properties.Resources.zapVit40;
             buttonAttackSpecial.ImageAlign = ContentAlignment.MiddleLeft;
             buttonAttackSpecial.Location = new Point(516, 1052);
             buttonAttackSpecial.Name = "buttonAttackSpecial";
@@ -143,7 +143,7 @@
             buttonProtect.Cursor = Cursors.Hand;
             buttonProtect.Font = new Font("Arial Rounded MT Bold", 14.1428576F, FontStyle.Regular, GraphicsUnit.Point, 0);
             buttonProtect.ForeColor = Color.White;
-            buttonProtect.Image = Properties.Resources.swords;
+            buttonProtect.Image = Properties.Resources.shieldVit40;
             buttonProtect.ImageAlign = ContentAlignment.MiddleLeft;
             buttonProtect.Location = new Point(748, 1052);
             buttonProtect.Name = "buttonProtect";
@@ -159,9 +159,9 @@
             // 
             buttonBerry.BackColor = Color.DarkSlateGray;
             buttonBerry.Cursor = Cursors.Hand;
-            buttonBerry.Font = new Font("Arial Rounded MT Bold", 14.1428576F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonBerry.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             buttonBerry.ForeColor = Color.White;
-            buttonBerry.Image = Properties.Resources.swords;
+            buttonBerry.Image = Properties.Resources.cherryVit40;
             buttonBerry.ImageAlign = ContentAlignment.MiddleLeft;
             buttonBerry.Location = new Point(980, 1052);
             buttonBerry.Name = "buttonBerry";
