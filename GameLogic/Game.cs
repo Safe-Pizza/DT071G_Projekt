@@ -1,4 +1,15 @@
-﻿using CuteMonsterQuest.Models;
+﻿/**
+ * Filnamn: Game.cs
+ * Författare: Hanna Lindkvist
+ * Datum: 2026-10-23
+ * Kurs: DT071G
+ * 
+ * Beskrivning: Game hanterar skapandet av spelets monster och lagrar spelar och motståndarmonster (sparar spelarens monster val och slumpar motståndare)
+ * Startar nytt objekt för strid med respektive monster av klassen Battle.
+ * 
+ * **/
+
+using CuteMonsterQuest.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,6 +32,7 @@ namespace CuteMonsterQuest.GameLogic
             CreateMonsters();
         }
 
+        //Skapar spelets olika monster
         private void CreateMonsters()
         {
             StartingMonsters.Add(new Monster(
@@ -42,6 +54,7 @@ namespace CuteMonsterQuest.GameLogic
                 "Purple", Properties.Resources.purpleAngryMonster, 110, 18));
         }
 
+        //Hanterar spelarens val av monstera
         public void SelectMonster(Monster monster)
         {
             if (!StartingMonsters.Contains(monster))
@@ -50,6 +63,7 @@ namespace CuteMonsterQuest.GameLogic
             SelectedMonster = monster;
         }
 
+        //Slumpar ett motståndarmonster
         private Monster RandomMonster(List<Monster> monsterList)
         {
             if (monsterList.Count == 0)
@@ -60,6 +74,7 @@ namespace CuteMonsterQuest.GameLogic
             return monsterList[index];
         }
 
+        //Startar strid och skapar nytt battle-objekt med spelar- och motståndarmonster
         public void StartBattle()
         {
             if (SelectedMonster is null)
