@@ -11,7 +11,7 @@ namespace CuteMonsterQuest.Actions
         public string Name => "äter bär";
         public bool DoAction(Monster attacker, Monster target)
         {
-            attacker.RestoreHp(20);
+            attacker.RestoreHp(10);
             return true;
         }
     }
