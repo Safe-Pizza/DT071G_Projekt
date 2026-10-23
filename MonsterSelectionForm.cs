@@ -1,4 +1,15 @@
-﻿using CuteMonsterQuest.GameLogic;
+﻿/**
+ * Filnamn: MonsterSelectionForm.cs
+ * Författare: Hanna Lindkvist
+ * Datum: 2026-10-23
+ * Kurs: DT071G
+ * 
+ * Beskrivning: Spelet sida för val av monster. Här väljer spelaren ett av tre tillgänliga monster.
+ * 
+ * **/
+
+
+using CuteMonsterQuest.GameLogic;
 using CuteMonsterQuest.Models;
 using System;
 using System.Collections.Generic;
@@ -23,6 +34,7 @@ namespace CuteMonsterQuest
             ShowMonsters(game.StartingMonsters);
         }
 
+        //Visa grafik, namn, hp och attack för de tre valbara spelarmonstren
         private void ShowMonsters(List<Monster> monsterList)
         {
             if (monsterList == null)
@@ -52,6 +64,7 @@ namespace CuteMonsterQuest
             pb3MonsterAttack.Text = $"Skada: {monsterList[2].MonsterAttack.ToString()}";
         }
 
+        //Klick-event för att välja monster
         private void ChooseMonster_Click(object? sender, EventArgs e)
         {
             if (sender is PictureBox pictureBox &&
