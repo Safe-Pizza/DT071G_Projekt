@@ -1,4 +1,16 @@
-﻿using System;
+﻿/**
+ * Filnamn: Monster.cs
+ * Författare: Hanna Lindkvist
+ * Datum: 2026-10-23
+ * Kurs: DT071G
+ * 
+ * Beskrivning: Representerar ett monster med egenskaperna Namn, bild, hp, attack, specialattack.
+ * Hanterar även skada och läkning samt skydd
+ * 
+ * **/
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -25,6 +37,7 @@ namespace CuteMonsterQuest.Models
             MonsterSpecialAttack = attack * 2;
         }
 
+        //Monster skadas
         public void TakeDamage(int damage)
         {
             if(HaveProtection)
@@ -40,6 +53,7 @@ namespace CuteMonsterQuest.Models
             }
         }
 
+        //Monster läker
         public void RestoreHp(int amount)
         {
             MonsterHp += amount;
@@ -49,11 +63,13 @@ namespace CuteMonsterQuest.Models
             }
         }
 
+        //Monster skyddar sid
         public void ActivateProtection()
         {
             HaveProtection = true;
         }
 
+        //Är monster vid liv?
         public bool IsAlive()
         {
             {
