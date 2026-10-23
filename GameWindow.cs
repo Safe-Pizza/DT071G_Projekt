@@ -1,4 +1,16 @@
-﻿using CuteMonsterQuest.Actions;
+﻿/**
+ * Filnamn: GameWindow.cs
+ * Författare: Hanna Lindkvist
+ * Datum: 2026-10-23
+ * Kurs: DT071G
+ * 
+ * Beskrivning: Spelets spelsida där strider mot datastyrd motståndare genomförs.
+ * Spelaren kan välja olika actions och se monstrets namn och HP
+ * 
+ * **/
+
+
+using CuteMonsterQuest.Actions;
 using CuteMonsterQuest.GameLogic;
 using CuteMonsterQuest.Interfaces;
 using CuteMonsterQuest.Models;
@@ -25,6 +37,7 @@ namespace CuteMonsterQuest
             ShowMonsters();
         }
 
+        //Visa grafik, namn och HP för spelarens valda monster och slumpad motståndare
         private void ShowMonsters()
         {
             if (game.CurrentBattle is null)
@@ -42,6 +55,7 @@ namespace CuteMonsterQuest
             labelOpponentMonsterHp.Text = $"HP: {opponent.MonsterHp}";
         }
 
+        //Klick-event för attack-knapp
         private async void buttonAttack_Click(object sender, EventArgs e)
         {
             if (game.CurrentBattle is null)
@@ -75,6 +89,7 @@ namespace CuteMonsterQuest
             EnablePlayerButtons(true);
         }
 
+        //Klick-event för Special Attack
         private async void buttonAttackSpecial_Click(object sender, EventArgs e)
         {
             if (game.CurrentBattle is null)
@@ -112,6 +127,7 @@ namespace CuteMonsterQuest
             }
         }
 
+        //Klick-event för Skydd
         private async void buttonProtect_Click(object sender, EventArgs e)
         {
             if (game.CurrentBattle is null)
@@ -147,6 +163,7 @@ namespace CuteMonsterQuest
 
         }
 
+        //Klick-event för Äta bär
         private async void buttonBerry_Click(object sender, EventArgs e)
         {
             if (game.CurrentBattle is null)
@@ -178,6 +195,7 @@ namespace CuteMonsterQuest
             EnablePlayerButtons(true);
         }
 
+        //Task för automatik för motståndarens tur
         private async Task AutomaticExecuteOpponentTurn()
         {
             if (game.CurrentBattle is null)
@@ -210,6 +228,7 @@ namespace CuteMonsterQuest
             }
         }
 
+        //Task för att skriva ut text (monster namn och gjord action)
         private async Task ShowBattleInfo(string info, Color? backgroundColor = null)
         {
             labelBattleInfo.Text = info;
@@ -221,6 +240,7 @@ namespace CuteMonsterQuest
             labelBattleInfo.Visible = false;
         }
 
+        //Aktivera och inaktivera spelares knappval
         private void EnablePlayerButtons(bool enabled)
         {
             if (game.CurrentBattle is null)
@@ -233,6 +253,7 @@ namespace CuteMonsterQuest
 
         }
 
+        //Uppdatera label för HP
         private void UpdateMonsterLabelHp()
         {
             if (game.CurrentBattle is null)
@@ -242,6 +263,7 @@ namespace CuteMonsterQuest
             labelOpponentMonsterHp.Text = $"HP: {game.CurrentBattle.Opponent.MonsterHp}";
         }
 
+        //Task för kontrollera vinnare och stänga spelet 
         private async Task EndBattle()
         {
             Battle? battle = game.CurrentBattle;
