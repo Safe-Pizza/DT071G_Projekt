@@ -118,17 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="beigeMonster" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\beigeMonster.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bakgrundStart1000" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bakgrundStart1000.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="swords" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\swords.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="greenMonster" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\greenMonster.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bakgrundStart1000" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bakgrundStart1000.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="purpleAngryMonster" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purpleAngryMonster.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="backgroundGame1500" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroundGame1500.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beigeMonster" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beigeMonster.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="redAngryMonster" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redAngryMonster.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,13 +142,10 @@
   <data name="blueMonster" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blueMonster.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="purpleAngryMonster" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\purpleAngryMonster.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="navyAngryMonster" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\navyAngryMonster.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="swords" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\swords.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bakgrundStart1500" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bakgrundStart1500.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

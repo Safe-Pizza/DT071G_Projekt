@@ -25,7 +25,7 @@ namespace CuteMonsterQuest
 
         private void ShowMonsters(List<Monster> monsterList)
         {
-            if(monsterList == null)
+            if (monsterList == null)
             {
                 throw new ArgumentException("Listan får inte vara tom");
             }
@@ -33,14 +33,23 @@ namespace CuteMonsterQuest
             pictureBox1.Image = monsterList[0].MonsterImage;
             pictureBox1.Tag = monsterList[0];
             pictureBox1.Click += ChooseMonster_Click;
+            pb1MonsterName.Text = monsterList[0].MonsterName;
+            pb1MonsterHp.Text = $"HP: {monsterList[0].MonsterHp.ToString()}";
+            pb1MonsterAttack.Text = $"Skada: {monsterList[0].MonsterAttack.ToString()}";
 
             pictureBox2.Image = monsterList[1].MonsterImage;
             pictureBox2.Tag = monsterList[1];
             pictureBox2.Click += ChooseMonster_Click;
+            pb2MonsterName.Text = monsterList[1].MonsterName;
+            pb2MonsterHp.Text = $"HP: {monsterList[1].MonsterHp.ToString()}";
+            pb2MonsterAttack.Text = $"Skada: {monsterList[1].MonsterAttack.ToString()}";
 
             pictureBox3.Image = monsterList[2].MonsterImage;
             pictureBox3.Tag = monsterList[2];
             pictureBox3.Click += ChooseMonster_Click;
+            pb3MonsterName.Text = monsterList[2].MonsterName;
+            pb3MonsterHp.Text = $"HP: {monsterList[2].MonsterHp.ToString()}";
+            pb3MonsterAttack.Text = $"Skada: {monsterList[2].MonsterAttack.ToString()}";
         }
 
         private void ChooseMonster_Click(object? sender, EventArgs e)

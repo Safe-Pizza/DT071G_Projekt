@@ -37,11 +37,11 @@
             // label1
             // 
             label1.BackColor = Color.Black;
-            label1.Font = new Font("Arial Rounded MT Bold", 20.1428585F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Arial Rounded MT Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(196, 9);
+            label1.Location = new Point(475, 47);
             label1.Name = "label1";
-            label1.Size = new Size(596, 86);
+            label1.Size = new Size(571, 86);
             label1.TabIndex = 0;
             label1.Text = "CUTE MONSTER QUEST";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -56,9 +56,9 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Arial Rounded MT Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(196, 510);
+            button1.Location = new Point(475, 805);
             button1.Name = "button1";
-            button1.Size = new Size(596, 75);
+            button1.Size = new Size(571, 75);
             button1.TabIndex = 1;
             button1.Text = "STARTA SPELET";
             button1.UseVisualStyleBackColor = false;
@@ -67,12 +67,12 @@
             // label2
             // 
             label2.BackColor = Color.Black;
-            label2.Font = new Font("Arial Rounded MT Bold", 14.1428576F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Arial Narrow", 14.1428576F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Transparent;
-            label2.Location = new Point(196, 113);
+            label2.Location = new Point(475, 172);
             label2.Name = "label2";
             label2.Padding = new Padding(10);
-            label2.Size = new Size(596, 368);
+            label2.Size = new Size(571, 590);
             label2.TabIndex = 2;
             label2.Text = resources.GetString("label2.Text");
             // 
@@ -80,8 +80,8 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.bakgrundStart1000;
-            ClientSize = new Size(976, 636);
+            BackgroundImage = Properties.Resources.bakgrundStart1500;
+            ClientSize = new Size(1476, 936);
             Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(label1);

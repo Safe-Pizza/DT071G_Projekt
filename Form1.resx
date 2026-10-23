@@ -118,6 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label2.Text" xml:space="preserve">
-    <value>Cute monster quest är ett tur-baserat spel. Välj ditt gulliga monster och besegra din motståndare. Välj mellan att attackera, skydda dig eller äta bär för mer liv genom att klicka på ditt monster. När ett monster har slut på liv är spelet slut och en vinnare koras. Lycka till!</value>
+    <value>Cute monster quest är ett tur-baserat spel. 
+Välj ditt gulliga monster och besegra din slumpade motståndare.
+Olika monster har olika egenskaper.
+
+Välj mellan att: 
+- Attackera (skada motståndaren)
+- Specialattack (dubbel skada en gång/spel)
+- Skydd (halvera skadan)
+- Äta bär (återställ lite HP)
+
+När ett monster har slut på HP är spelet slut och en vinnare koras. Lycka till!
+</value>
   </data>
 </root>
