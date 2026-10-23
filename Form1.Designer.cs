@@ -50,6 +50,7 @@
             // button1
             // 
             button1.BackColor = Color.DarkSlateGray;
+            button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
             button1.FlatAppearance.BorderSize = 2;
             button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 49, 53);

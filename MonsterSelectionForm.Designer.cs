@@ -49,6 +49,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Location = new Point(206, 212);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(300, 300);
@@ -59,6 +60,7 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Location = new Point(587, 212);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(300, 300);
@@ -69,6 +71,7 @@
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Cursor = Cursors.Hand;
             pictureBox3.Location = new Point(952, 212);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(300, 300);
