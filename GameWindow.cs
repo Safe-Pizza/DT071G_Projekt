@@ -42,16 +42,6 @@ namespace CuteMonsterQuest
             labelOpponentMonsterHp.Text = $"HP: {opponent.MonsterHp}";
         }
 
-        private void GameWindow_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private async void buttonAttack_Click(object sender, EventArgs e)
         {
             if (game.CurrentBattle is null)
@@ -75,8 +65,9 @@ namespace CuteMonsterQuest
             }
             else
             {
-                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} attackerar");
                 UpdateMonsterLabelHp();
+                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} attackerar");
+                
             }
 
             await AutomaticExecuteOpponentTurn();
@@ -111,10 +102,10 @@ namespace CuteMonsterQuest
             }
             else
             {
-                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} använder specialattack");
                 UpdateMonsterLabelHp();
 
-
+                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} använder specialattack");
+                
                 await AutomaticExecuteOpponentTurn();
 
                 EnablePlayerButtons(true);
@@ -144,8 +135,10 @@ namespace CuteMonsterQuest
             }
             else
             {
-                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} aktiverar skydd");
                 UpdateMonsterLabelHp();
+
+                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} aktiverar skydd");
+
             }
 
             await AutomaticExecuteOpponentTurn();
@@ -175,8 +168,9 @@ namespace CuteMonsterQuest
             }
             else
             {
-                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} äter bär");
                 UpdateMonsterLabelHp();
+
+                await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} äter bär");
             }
 
             await AutomaticExecuteOpponentTurn();
@@ -222,7 +216,7 @@ namespace CuteMonsterQuest
             labelBattleInfo.BackColor = backgroundColor ?? Color.DarkSlateGray;
             labelBattleInfo.Visible = true;
 
-            await Task.Delay(2000);
+            await Task.Delay(3000);
 
             labelBattleInfo.Visible = false;
         }

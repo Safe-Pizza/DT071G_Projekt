@@ -90,7 +90,6 @@
             labelOpponentMonster.Name = "labelOpponentMonster";
             labelOpponentMonster.Size = new Size(207, 55);
             labelOpponentMonster.TabIndex = 4;
-            labelOpponentMonster.Click += label1_Click;
             // 
             // labelOpponentMonsterHp
             // 
@@ -209,7 +208,6 @@
             Controls.Add(pictureBox1);
             Name = "GameWindow";
             Text = "GameWindow - Cute Monster Quest";
-            Load += GameWindow_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
