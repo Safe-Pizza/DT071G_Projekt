@@ -209,9 +209,13 @@ namespace CuteMonsterQuest
             }
             else
             {
-                await ShowBattleInfo($"{game.CurrentBattle.Opponent.MonsterName} {opponentAction.Name}", Color.Black);
                 UpdateMonsterLabelHp();
+                await ShowBattleInfo($"{game.CurrentBattle.Opponent.MonsterName} {opponentAction.Name}", Color.Black);
 
+                if (game.CurrentBattle.IsBattleWon())
+                {
+                    await EndBattle();
+                }
             }
         }
 
