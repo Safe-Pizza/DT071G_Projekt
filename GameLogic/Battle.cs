@@ -58,7 +58,13 @@ namespace CuteMonsterQuest.GameLogic
                 return null;
             }
 
-            IAction action = RandomAction(opponentActions);
+            List<IAction> availableActions = opponentActions
+            .Where(action =>
+            !(action is Specialattack && Opponent.UsedSpecialAttack) &&
+            !(action is Protect && Opponent.HaveProtection))
+            .ToList();
+
+            IAction action = RandomAction(availableActions);
 
             bool success = ActionTurn(action);
 

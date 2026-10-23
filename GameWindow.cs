@@ -195,21 +195,18 @@ namespace CuteMonsterQuest
             {
                 if (game.CurrentBattle.IsBattleWon())
                 {
-                    await EndBattle();
-                }
-                else if (game.CurrentBattle.Opponent.UsedSpecialAttack)
-                {
-                    await AutomaticExecuteOpponentTurn();
+                    await EndBattle(); 
                 }
                 else
                 {
                     MessageBox.Show("Opponent turn went wrong");
-                    return;
                 }
+                return;
             }
             else
             {
                 UpdateMonsterLabelHp();
+
                 await ShowBattleInfo($"{game.CurrentBattle.Opponent.MonsterName} {opponentAction.Name}", Color.Black);
 
                 if (game.CurrentBattle.IsBattleWon())
@@ -237,7 +234,7 @@ namespace CuteMonsterQuest
 
             buttonAttack.Enabled = enabled;
             buttonAttackSpecial.Enabled = enabled && !game.CurrentBattle.Player.UsedSpecialAttack;
-            buttonProtect.Enabled = enabled;
+            buttonProtect.Enabled = enabled && !game.CurrentBattle.Player.HaveProtection;
             buttonBerry.Enabled = enabled;
 
         }
