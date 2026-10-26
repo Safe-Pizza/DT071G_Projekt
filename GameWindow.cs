@@ -81,7 +81,7 @@ namespace CuteMonsterQuest
             {
                 UpdateMonsterLabelHp();
                 await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} attackerar");
-                
+
             }
 
             await AutomaticExecuteOpponentTurn();
@@ -120,7 +120,7 @@ namespace CuteMonsterQuest
                 UpdateMonsterLabelHp();
 
                 await ShowBattleInfo($"{game.CurrentBattle.Player.MonsterName} använder specialattack");
-                
+
                 await AutomaticExecuteOpponentTurn();
 
                 EnablePlayerButtons(true);
@@ -207,7 +207,7 @@ namespace CuteMonsterQuest
             {
                 if (game.CurrentBattle.IsBattleWon())
                 {
-                    await EndBattle(); 
+                    await EndBattle();
                 }
                 else
                 {

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             labelPlayerMonster = new Label();
@@ -39,7 +38,6 @@
             buttonAttackSpecial = new Button();
             buttonProtect = new Button();
             buttonBerry = new Button();
-            battleInfoTimer = new System.Windows.Forms.Timer(components);
             labelBattleInfo = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -172,10 +170,6 @@
             buttonBerry.UseVisualStyleBackColor = false;
             buttonBerry.Click += buttonBerry_Click;
             // 
-            // battleInfoTimer
-            // 
-            battleInfoTimer.Interval = 2000;
-            // 
             // labelBattleInfo
             // 
             labelBattleInfo.BackColor = Color.Transparent;
@@ -225,7 +219,6 @@
         private Button buttonAttackSpecial;
         private Button buttonProtect;
         private Button buttonBerry;
-        private System.Windows.Forms.Timer battleInfoTimer;
         private Label labelBattleInfo;
     }
 }
