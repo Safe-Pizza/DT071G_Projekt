@@ -8,10 +8,10 @@ Cute Monster Quest är ett enkelt turordningsbaserat monsterspel utvecklat i C# 
  * Möta en slumpmässig motståndare.
  * Turbaserat logik.
  * Fyra olika handlingar:
-  * Attack: Attackera motståndaren.
-  * Specialattack: Utför en kraftigare attack som kan användas en gång per strid.
-  * Skydd: Skydda monstret och minska inkommande skada.
-  * Ät bär: Återställ 20 HP.
+   * Attack: Attackera motståndaren.
+   * Specialattack: Utför en kraftigare attack som kan användas en gång per strid.
+   * Skydd: Skydda monstret och minska inkommande skada.
+   * Ät bär: Återställ 20 HP.
 * Spelet avslutas när något av monstren förlorat all sin HP.
 
 ## Starta projektet
